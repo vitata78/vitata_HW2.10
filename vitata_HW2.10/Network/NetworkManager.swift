@@ -10,7 +10,7 @@ import UIKit
 class NetworkManager {
     
     static let shared = NetworkManager()
-    var data: Feed!
+    var data: [Record]!
     
     private init() {}
     
@@ -29,8 +29,8 @@ class NetworkManager {
             let decoder = JSONDecoder()
 
             do {
-                let cell = try decoder.decode(Feed.self, from: data)
-                self.data = cell
+                let data = try decoder.decode(Feed.self, from: data)
+                self.data = self.processData(source: data)
                 //print(cell)
             } catch let error {
                 print("!!!error from do-catch: \(error)")
@@ -40,12 +40,45 @@ class NetworkManager {
             
         }.resume()
         
-        _ = semaphore.wait(wallTimeout: .distantFuture)
+        _ = semaphore.wait(wallTimeout: .distantFuture) // дожидаемся загрузку данных
         
     }
     
     
-    
+    func processData(source: Feed) -> [Record] {
+        var output: [Record] = []
+        
+        for entryItem in 0..<(source.feed?.entry?.count ?? 0) {
+            
+            if source.feed?.entry?[entryItem].gs$cell?.col == "1" && source.feed?.entry?[entryItem].gs$cell?.row != "1" {
+                
+                var description: String = ""
+                var image: String = ""
+                
+                for entryDesc in 0..<(source.feed?.entry?.count ?? 0) {
+                    
+                    if source.feed?.entry?[entryDesc].gs$cell?.row == source.feed?.entry?[entryItem].gs$cell?.row && source.feed?.entry?[entryDesc].gs$cell?.col == "2" {
+                        description = source.feed?.entry?[entryDesc].gs$cell?.inputValue ?? ""
+                        
+                    }
+                    
+                    if source.feed?.entry?[entryDesc].gs$cell?.row == source.feed?.entry?[entryItem].gs$cell?.row && source.feed?.entry?[entryDesc].gs$cell?.col == "3" {
+                        image = source.feed?.entry?[entryDesc].gs$cell?.inputValue ?? ""
+                        
+                    }
+                    
+                }
+                
+                let item: String = source.feed?.entry?[entryItem].gs$cell?.inputValue ?? ""
+                
+                let record = Record(item: item, description: description, image: image)
+                
+                output.append(record)
+            }
+            
+        }
+        return output
+    }
     
 }
 

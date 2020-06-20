@@ -16,14 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EW9-NL-ZXB">
-                                <rect key="frame" x="0.0" y="140" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="748"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fu-M7-3rW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="343"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="369"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNN-Af-ErW">
-                                        <rect key="frame" x="0.0" y="353" width="414" height="343"/>
+                                        <rect key="frame" x="0.0" y="379" width="414" height="369"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
@@ -33,7 +33,7 @@
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal" distribution="fillEqually"/>
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Iqe-eF-1o0">
-                                <rect key="frame" x="188.5" y="293" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="254" width="37" height="37"/>
                                 <color key="color" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -48,7 +48,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3vZ-TI-i0B"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="3vZ-TI-i0B"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Iqe-eF-1o0" id="K5Y-ZH-TuU"/>
                         <outlet property="descriptionTextView" destination="DNN-Af-ErW" id="jF6-0K-efv"/>

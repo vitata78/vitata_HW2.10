@@ -14,31 +14,48 @@ class DetailsViewController: UIViewController {
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var selectedItem: Record!
+    var record: Record!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fillData(with: selectedItem)
-        
+        fillData(with: record)
     }
-    
-    
     
     private func fillData(with selectedItem: Record) {
 
-        descriptionTextView.text = selectedItem.description
         title = selectedItem.item
         
+        if selectedItem.description != "" {
+            descriptionTextView.text = selectedItem.description
+        } else {
+            descriptionTextView.text = "No data"
+        }
+        
+        
         DispatchQueue.global().async {
-            guard let stringURL = self.selectedItem.image else { return }
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.imageView.image = UIImage(data: imageData)
+            if
+                let stringURL = self.record.image,
+                stringURL != "",                                        // если в ячейке ничего нет
+                let imageURL = URL(string: stringURL),
+                let imageData = try? Data(contentsOf: imageURL) {       // если в ячейке не адрес
+                
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.imageView.image = UIImage(data: imageData)
+                }
+                
+            } else {
+                
+                // если что-то пошло не так - ставим заглушку
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.imageView.image = UIImage(named: "Placeholder")
+                }
+                
             }
+               
         }
     }
     
