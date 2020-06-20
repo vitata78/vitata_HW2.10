@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		698A805D249D60F100759C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A805C249D60F100759C85 /* AppDelegate.swift */; };
 		698A805F249D60F100759C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A805E249D60F100759C85 /* SceneDelegate.swift */; };
-		698A8061249D60F100759C85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A8060249D60F100759C85 /* ViewController.swift */; };
+		698A8061249D60F100759C85 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A8060249D60F100759C85 /* DetailsViewController.swift */; };
 		698A8064249D60F100759C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698A8062249D60F100759C85 /* Main.storyboard */; };
 		698A8066249D60F400759C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698A8065249D60F400759C85 /* Assets.xcassets */; };
 		698A8069249D60F400759C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698A8067249D60F400759C85 /* LaunchScreen.storyboard */; };
+		698A8071249D617900759C85 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A8070249D617900759C85 /* Model.swift */; };
+		698A8073249D675100759C85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A8072249D675100759C85 /* NetworkManager.swift */; };
+		69A0627C249DA19800E0404E /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0627B249DA19800E0404E /* ListTableViewController.swift */; };
+		69A06284249DBA2F00E0404E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A06283249DBA2F00E0404E /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		698A8059249D60F100759C85 /* vitata_HW2.10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vitata_HW2.10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698A805C249D60F100759C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		698A805E249D60F100759C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		698A8060249D60F100759C85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		698A8060249D60F100759C85 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		698A8063249D60F100759C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		698A8065249D60F400759C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		698A8068249D60F400759C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		698A806A249D60F400759C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		698A8070249D617900759C85 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		698A8072249D675100759C85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		69A0627B249DA19800E0404E /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		69A06283249DBA2F00E0404E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		698A805B249D60F100759C85 /* vitata_HW2.10 */ = {
 			isa = PBXGroup;
 			children = (
-				698A805C249D60F100759C85 /* AppDelegate.swift */,
-				698A805E249D60F100759C85 /* SceneDelegate.swift */,
-				698A8060249D60F100759C85 /* ViewController.swift */,
-				698A8062249D60F100759C85 /* Main.storyboard */,
-				698A8065249D60F400759C85 /* Assets.xcassets */,
-				698A8067249D60F400759C85 /* LaunchScreen.storyboard */,
-				698A806A249D60F400759C85 /* Info.plist */,
+				69A0627D249DA1B700E0404E /* ViewControllers */,
+				69A0627E249DA1C200E0404E /* Storyboards */,
+				69A06281249DA1F000E0404E /* Network */,
+				69A06282249DA1F700E0404E /* Model */,
+				69A06280249DA1D600E0404E /* SupportingFiles */,
+				69A0627F249DA1CC00E0404E /* Resources */,
 			);
 			path = vitata_HW2.10;
+			sourceTree = "<group>";
+		};
+		69A0627D249DA1B700E0404E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				698A8060249D60F100759C85 /* DetailsViewController.swift */,
+				69A0627B249DA19800E0404E /* ListTableViewController.swift */,
+				69A06283249DBA2F00E0404E /* StartViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		69A0627E249DA1C200E0404E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				698A8062249D60F100759C85 /* Main.storyboard */,
+				698A8067249D60F400759C85 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		69A0627F249DA1CC00E0404E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				698A8065249D60F400759C85 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		69A06280249DA1D600E0404E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				698A805C249D60F100759C85 /* AppDelegate.swift */,
+				698A805E249D60F100759C85 /* SceneDelegate.swift */,
+				698A806A249D60F400759C85 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		69A06281249DA1F000E0404E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				698A8072249D675100759C85 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		69A06282249DA1F700E0404E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				698A8070249D617900759C85 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698A8061249D60F100759C85 /* ViewController.swift in Sources */,
+				698A8061249D60F100759C85 /* DetailsViewController.swift in Sources */,
+				69A06284249DBA2F00E0404E /* StartViewController.swift in Sources */,
 				698A805D249D60F100759C85 /* AppDelegate.swift in Sources */,
+				698A8073249D675100759C85 /* NetworkManager.swift in Sources */,
+				69A0627C249DA19800E0404E /* ListTableViewController.swift in Sources */,
 				698A805F249D60F100759C85 /* SceneDelegate.swift in Sources */,
+				698A8071249D617900759C85 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZC579X3KH;
-				INFOPLIST_FILE = vitata_HW2.10/Info.plist;
+				INFOPLIST_FILE = vitata_HW2.10/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "apnet.vitata-HW2-10";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZC579X3KH;
-				INFOPLIST_FILE = vitata_HW2.10/Info.plist;
+				INFOPLIST_FILE = vitata_HW2.10/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "apnet.vitata-HW2-10";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
