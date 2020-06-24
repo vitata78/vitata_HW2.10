@@ -5,7 +5,7 @@
 //  Created by Andrew on 6/19/20.
 //  Copyright © 2020 APNET HQ LLC. All rights reserved.
 //
-import UIKit
+import Foundation
 
 class NetworkManager {
     
