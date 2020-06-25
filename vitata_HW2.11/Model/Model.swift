@@ -6,22 +6,29 @@
 //  Copyright © 2020 APNET HQ LLC. All rights reserved.
 //
 
-struct Cell: Decodable {
+struct Cell {
+    
     let row: String?
     let col: String?
     let inputValue: String?
-}
-
-struct Entry: Decodable {
-    let gs$cell: Cell?
-}
-
-struct Content: Decodable {
-    let entry: [Entry]?
-}
-
-struct Feed: Decodable {
-    let feed: Content?
+    
+    init(dictCell: [String: Any]) {
+        row = dictCell["row"] as? String
+        col = dictCell["col"] as? String
+        inputValue = dictCell["inputValue"] as? String
+    }
+    
+    static func getCells(from entryData: [[String: Any]]) -> [Cell]? {
+        
+        var cells: [Cell] = []
+        
+        for entryDataItem in entryData {
+            guard let dictCell = entryDataItem["gs$cell"] as? [String: Any] else { return nil }
+            let cell = Cell(dictCell: dictCell)
+            cells.append(cell)
+        }
+        return cells
+    }
 }
 
 struct Record {

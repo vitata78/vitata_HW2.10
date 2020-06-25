@@ -10,7 +10,7 @@
         <!--Details View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DetailsViewController" customModule="vitata_HW2_10" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DetailsViewController" customModule="vitata_HW2_11" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
         <!--List-->
         <scene sceneID="lf4-hQ-1lo">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="cH4-Su-296" customClass="ListTableViewController" customModule="vitata_HW2_10" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="cH4-Su-296" customClass="ListTableViewController" customModule="vitata_HW2_11" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yxb-x9-2Qw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="599" y="80"/>
         </scene>
-        <!--Start View Controller-->
+        <!--View Controller-->
         <scene sceneID="hoD-fv-w34">
             <objects>
-                <viewController id="IZo-Xl-vMn" customClass="StartViewController" customModule="vitata_HW2_10" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IZo-Xl-vMn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8qT-1P-2Uh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

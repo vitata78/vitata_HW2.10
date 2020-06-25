@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,10 +16,12 @@
 		698A8071249D617900759C85 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A8070249D617900759C85 /* Model.swift */; };
 		698A8073249D675100759C85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A8072249D675100759C85 /* NetworkManager.swift */; };
 		69A0627C249DA19800E0404E /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0627B249DA19800E0404E /* ListTableViewController.swift */; };
-		69A06284249DBA2F00E0404E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A06283249DBA2F00E0404E /* StartViewController.swift */; };
+		99D35021442A26A7CEBE8A0D /* Pods_vitata_HW2_11.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E66A011DCE1CC7985C3514 /* Pods_vitata_HW2_11.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272BDA59242FD5A8BA51D4A8 /* Pods-vitata_HW2.11.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vitata_HW2.11.debug.xcconfig"; path = "Target Support Files/Pods-vitata_HW2.11/Pods-vitata_HW2.11.debug.xcconfig"; sourceTree = "<group>"; };
+		35A40729FB90418E2A90B836 /* Pods-vitata_HW2.11.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vitata_HW2.11.release.xcconfig"; path = "Target Support Files/Pods-vitata_HW2.11/Pods-vitata_HW2.11.release.xcconfig"; sourceTree = "<group>"; };
 		698A8059249D60F100759C85 /* vitata_HW2.11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vitata_HW2.11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698A805C249D60F100759C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		698A805E249D60F100759C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +33,7 @@
 		698A8070249D617900759C85 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		698A8072249D675100759C85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		69A0627B249DA19800E0404E /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
-		69A06283249DBA2F00E0404E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		85E66A011DCE1CC7985C3514 /* Pods_vitata_HW2_11.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vitata_HW2_11.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D35021442A26A7CEBE8A0D /* Pods_vitata_HW2_11.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48DFAAE0277379D1BB70156A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				272BDA59242FD5A8BA51D4A8 /* Pods-vitata_HW2.11.debug.xcconfig */,
+				35A40729FB90418E2A90B836 /* Pods-vitata_HW2.11.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		698A8050249D60F100759C85 = {
 			isa = PBXGroup;
 			children = (
 				698A805B249D60F100759C85 /* vitata_HW2.11 */,
 				698A805A249D60F100759C85 /* Products */,
+				48DFAAE0277379D1BB70156A /* Pods */,
+				BB173F7685FEC6ED089EB3CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,7 +93,6 @@
 			children = (
 				698A8060249D60F100759C85 /* DetailsViewController.swift */,
 				69A0627B249DA19800E0404E /* ListTableViewController.swift */,
-				69A06283249DBA2F00E0404E /* StartViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +140,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BB173F7685FEC6ED089EB3CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85E66A011DCE1CC7985C3514 /* Pods_vitata_HW2_11.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 698A806D249D60F400759C85 /* Build configuration list for PBXNativeTarget "vitata_HW2.11" */;
 			buildPhases = (
+				06A771CB0BA1C0CE855E8FFD /* [CP] Check Pods Manifest.lock */,
 				698A8055249D60F100759C85 /* Sources */,
 				698A8056249D60F100759C85 /* Frameworks */,
 				698A8057249D60F100759C85 /* Resources */,
+				368029045A4C0EA1D7D5FF27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,7 +177,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "APNET HQ LLC";
 				TargetAttributes = {
 					698A8058249D60F100759C85 = {
@@ -193,13 +216,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06A771CB0BA1C0CE855E8FFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vitata_HW2.11-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		368029045A4C0EA1D7D5FF27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vitata_HW2.11/Pods-vitata_HW2.11-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vitata_HW2.11/Pods-vitata_HW2.11-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vitata_HW2.11/Pods-vitata_HW2.11-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		698A8055249D60F100759C85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				698A8061249D60F100759C85 /* DetailsViewController.swift in Sources */,
-				69A06284249DBA2F00E0404E /* StartViewController.swift in Sources */,
 				698A805D249D60F100759C85 /* AppDelegate.swift in Sources */,
 				698A8073249D675100759C85 /* NetworkManager.swift in Sources */,
 				69A0627C249DA19800E0404E /* ListTableViewController.swift in Sources */,
@@ -256,6 +320,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -316,6 +381,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -346,6 +412,7 @@
 		};
 		698A806E249D60F400759C85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 272BDA59242FD5A8BA51D4A8 /* Pods-vitata_HW2.11.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZC579X3KH;
@@ -363,6 +430,7 @@
 		};
 		698A806F249D60F400759C85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35A40729FB90418E2A90B836 /* Pods-vitata_HW2.11.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZC579X3KH;

@@ -6,76 +6,86 @@
 //  Copyright © 2020 APNET HQ LLC. All rights reserved.
 //
 import Foundation
+import Alamofire
 
 class NetworkManager {
     
     static let shared = NetworkManager()
+    
     var data: [Record]!
     
     private init() {}
     
-    func getData() {
-
+    
+    func getData(completion: @escaping ([Record] ,Bool) -> Void) {
+        
         let jsonUrl = "https://spreadsheets.google.com/feeds/cells/1T9veABsLs19foEHDr0XkHWL7bnbr2WXzRPhLmqY1l5s/1/public/full?alt=json"
         
-        guard let url = URL(string: jsonUrl) else { return }
+        AF.request(jsonUrl)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    
+                    guard let feedData = value as? [String: Any] else { return }
+                    guard let contentData = feedData["feed"] as? [String: Any] else { return }
+                    guard let entryData = contentData["entry"] as? [[String: Any]] else { return }
+                    
+                    self.data = self.processData(source: Cell.getCells(from: entryData) ?? [])
+                    
+                    completion(self.data, true)
+                    
+                case .failure(let error):
+                    print(error)
+                    completion([],false)
+                }
+        }
         
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error { print("!!error from URLSession.shared.dataTask: \(error)"); return }
-            guard let data = data else { return }
-            
-            let decoder = JSONDecoder()
-
-            do {
-                let data = try decoder.decode(Feed.self, from: data)
-                self.data = self.processData(source: data)
-                //print(cell)
-            } catch let error {
-                print("!!!error from do-catch: \(error)")
-            }
-            
-            semaphore.signal()
-            
-        }.resume()
-        
-        _ = semaphore.wait(wallTimeout: .distantFuture) // дожидаемся загрузку данных
-        
+//        AF.request(jsonUrl)
+//            .validate()
+//            .responseDecodable(of: Feed.self) { response in
+//                switch response.result {
+//                case .success(let feed):
+//                    self.data = self.processData(source: feed)
+//                    completion(self.data, true)
+//
+//                case .failure(let error):
+//                    print(error)
+//                    completion([],false)
+//                }
+//        }
     }
     
     
-    func processData(source: Feed) -> [Record] {
+    func processData(source: [Cell]) -> [Record] {
         var output: [Record] = []
-        
-        for entryItem in 0..<(source.feed?.entry?.count ?? 0) {
-            
-            if source.feed?.entry?[entryItem].gs$cell?.col == "1" && source.feed?.entry?[entryItem].gs$cell?.row != "1" {
-                
+
+        for entryItem in 0..<source.count {
+
+            if source[entryItem].col == "1" && source[entryItem].row != "1" {
+
                 var description: String = ""
                 var image: String = ""
-                
-                for entryDesc in 0..<(source.feed?.entry?.count ?? 0) {
-                    
-                    if source.feed?.entry?[entryDesc].gs$cell?.row == source.feed?.entry?[entryItem].gs$cell?.row && source.feed?.entry?[entryDesc].gs$cell?.col == "2" {
-                        description = source.feed?.entry?[entryDesc].gs$cell?.inputValue ?? ""
-                        
+
+                for entryDesc in 0..<source.count {
+
+                    if source[entryDesc].row == source[entryItem].row && source[entryDesc].col == "2" {
+                        description = source[entryDesc].inputValue ?? ""
                     }
-                    
-                    if source.feed?.entry?[entryDesc].gs$cell?.row == source.feed?.entry?[entryItem].gs$cell?.row && source.feed?.entry?[entryDesc].gs$cell?.col == "3" {
-                        image = source.feed?.entry?[entryDesc].gs$cell?.inputValue ?? ""
-                        
+
+                    if source[entryDesc].row == source[entryItem].row && source[entryDesc].col == "3" {
+                        image = source[entryDesc].inputValue ?? ""
                     }
-                    
+
                 }
-                
-                let item: String = source.feed?.entry?[entryItem].gs$cell?.inputValue ?? ""
+
+                let item: String = source[entryItem].inputValue ?? ""
                 
                 let record = Record(item: item, description: description, image: image)
-                
+
                 output.append(record)
             }
-            
+
         }
         return output
     }

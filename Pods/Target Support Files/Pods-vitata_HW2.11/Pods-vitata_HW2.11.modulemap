@@ -1,0 +1,6 @@
+framework module Pods_vitata_HW2_11 {
+  umbrella header "Pods-vitata_HW2.11-umbrella.h"
+
+  export *
+  module * { export * }
+}

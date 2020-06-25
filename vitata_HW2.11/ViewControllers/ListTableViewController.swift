@@ -9,16 +9,13 @@
 import UIKit
 
 class ListTableViewController: UITableViewController {
-
-    var test: String!
     
     var records: [Record]?
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        records = NetworkManager.shared.data
+        fillData()
     }
 
     // MARK: - Table view data source
@@ -37,10 +34,18 @@ class ListTableViewController: UITableViewController {
     }
     
     @IBAction func refreshButton(_ sender: UIBarButtonItem) {
-        NetworkManager.shared.getData()
-        records = NetworkManager.shared.data
-        tableView.reloadData()
-        //print(output)
+        fillData()
+    }
+    
+    
+    private func fillData() {
+        NetworkManager.shared.getData { (data, success) in
+            if(success)
+            {
+                self.records = data
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
